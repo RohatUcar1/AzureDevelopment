@@ -9,7 +9,7 @@ namespace AzureActiveDirectoryUtilities
         {
             var groupReader = new AADGroupReader();
 
-            var groupName = "my-aad-group";
+            var groupName = "testaddgroup";
             var groupTransitiveMembers = groupReader.GetGroupMembers(groupName);
         }
 

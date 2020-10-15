@@ -4,8 +4,6 @@ using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AzureAdGroupReader
 {
@@ -16,9 +14,9 @@ namespace AzureAdGroupReader
             var userList = new List<AadGroupMember>();
             try
             {
-                var clientId = "";
-                var tenantId = "";
-                var secret = "";
+                var clientId = "your-aad-app-client-id";
+                var tenantId = "your-tenant-id";
+                var secret = "your-aad-app-client-secret";
 
                 IConfidentialClientApplication confidentialClientApplication = ConfidentialClientApplicationBuilder
                                                                                    .Create(clientId)
@@ -28,8 +26,6 @@ namespace AzureAdGroupReader
 
                 IAuthenticationProvider authProvider = new ClientCredentialProvider(confidentialClientApplication);
                 GraphServiceClient graphClient = new GraphServiceClient(authProvider);
-
-
 
                 var groupsDetails = graphClient.Groups.Request()
                     .Filter($"startswith(displayName,'{groupName}')")
