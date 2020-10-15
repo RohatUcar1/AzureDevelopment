@@ -13,8 +13,6 @@ namespace AzureAdGroupReader
     {
         public List<AadGroupMember> GetGroupMembers(string groupName)
         {
-            //var groupName = "Revenue Planning Biz Ops"; // 
-
             var userList = new List<AadGroupMember>();
             try
             {
